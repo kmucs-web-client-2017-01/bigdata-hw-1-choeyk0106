@@ -69,11 +69,11 @@ public class ReviewScore extends Configured implements Tool {
 	
         private Text word = new Text();
        
-		@Override
+		@Override   // 코드 들여쓰기
         public void map(LongWritable key, Text value, Context context)
             throws IOException, InterruptedException {
 			try{
-				JSONObject jsn = new JSONObject(value.toString());
+				JSONObject jsn = new JSONObject(value.toString());   // 변수명 jsn?
 				String asinValue = (String)jsn.get("asin");
 				String overall = jsn.get("overall").toString();
 				FloatWritable overallValue = new FloatWritable(Float.parseFloat(overall));
